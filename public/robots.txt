@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# TODO: set sitemap URL once domain is known
+Sitemap:
+
+Disallow: /admin/
+Disallow: /temp/
+Disallow: /drafts/
