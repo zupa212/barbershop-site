@@ -35,7 +35,7 @@ const TeamSection = ({ hideLeadershipControls = false, showOnlyThermi = false, s
       image: "/uploads/219d3af8-1e4f-4915-a037-991210ae72e7.png",
       name: "Κονσούλας Γιάννης",
       role: "CEO",
-      bio: "Ο Γιάννης Κονσούλας είναι ένας νέος επιχειρηματίας με όραμα και φιλοδοξίες.Ξεκίνησε την επαγγελματική του πορεία με σκοπό να προσφέρει ποιότητα και εξαιρετική εξυπηρέτηση στον τομέα των κουρείων και της περιποίησης. Πριν από δύο χρόνια, το 2023, άνοιξε το πρώτο του κατάστημα, το Kings Barbershop, στο Πανόραμα Θεσσαλονίκης, \nστη διεύθυνση Βενιζέλου 12.Κατάφερε να δημιουργήσει έναν χώρο, που συνδυάζει το στυλ, την άνεση και την επαγγελματική φροντίδα, προσφέροντας εξαιρετικές υπηρεσίες κουρέματος και περιποίησης.\n\nΠέντε μήνες πριν, η επιχείρησή του επεκτάθηκε με το άνοιγμα του δεύτερου καταστήματος στην Καραολή και Δημητρίου 4, στην περιοχή της Θέρμης.Αποδεικνύοντας τη συνεχιζόμενη ανάπτυξη και την επιτυχία του επιχειρηματικού του εγχειρήματος. Η ανάπτυξη όμως της ιδέας δεν σταματάει εδώ.Με στόχο να καλύψει και τις ανάγκες των γυναικών, ετοιμάζει την ίδρυση του τρίτου καταστήματος, το οποίο θα είναι αφιερωμένο στη γυναικεία περιποίηση, στο Πανόραμα Θεσσαλονίκης.\n\nΗ φιλοσοφία του King's βασίζεται στη συνεχιζόμενη εξέλιξη, την καινοτομία και την προσφορά υπηρεσιών υψηλής ποιότητας. Κάθε νέο βήμα του είναι το αποτέλεσμα της αφοσίωσης και της αγάπης του για το αντικείμενο του, αλλά και της συνεχούς αναζήτησης του καλύτερου για τους πελάτες του. Ο στόχος του είναι να επεκτείνει την επιχείρηση του ακόμη περισσότερο, προσφέροντας εξαιρετικές υπηρεσίες και εμπειρίες σε ακόμα περισσότερους ανθρώπους.",
+      bio: "Ο Γιάννης Κονσούλας είναι ένας νέος επιχειρηματίας με όραμα και φιλοδοξίες. Ξεκίνησε την επαγγελματική του πορεία με σκοπό να προσφέρει ποιότητα και εξαιρετική εξυπηρέτηση στον τομέα των κουρείων και της περιποίησης. Πριν από δύο χρόνια, το 2023, άνοιξε το πρώτο του κατάστημα, το Kings Barbershop, στο Πανόραμα Θεσσαλονίκης, στη διεύθυνση Βενιζέλου 12. Κατάφερε να δημιουργήσει έναν χώρο που συνδυάζει το στυλ, την άνεση και την επαγγελματική φροντίδα, προσφέροντας εξαιρετικές υπηρεσίες κουρέματος και περιποίησης.\n\nΠέντε μήνες πριν, η επιχείρησή του επεκτάθηκε με το άνοιγμα του δεύτερου καταστήματος στην Καραολή και Δημητρίου 4, στην περιοχή της Θέρμης, επιβεβαιώνοντας τη συνεχή ανάπτυξη και τη δυναμική πορεία του επιχειρηματικού του εγχειρήματος.\n\nΗ εξέλιξη του brand, όμως, δεν σταμάτησε εκεί. Ακολούθησε το άνοιγμα του τρίτου καταστήματος στο Πανόραμα Θεσσαλονίκης, ενός νέου χώρου αφιερωμένου αποκλειστικά στη γυναικεία περιποίηση, διευρύνοντας έτσι τις υπηρεσίες και το κοινό της επιχείρησης.\n\nΠαράλληλα, προχώρησε και στη δημιουργία ακόμη ενός ανδρικού barber shop στο κέντρο της Καλαμαριάς, στην οδό Κοτυώρων 37, ενισχύοντας ακόμη περισσότερο την παρουσία του στη Θεσσαλονίκη.\n\nΕπόμενος στόχος είναι η περαιτέρω ανάπτυξη του brand μέσω δημιουργίας καταστημάτων franchise σε όλη την Ελλάδα, με σκοπό να μεταφερθεί η εμπειρία και η φιλοσοφία της επιχείρησης σε κάθε μεγάλη πόλη της χώρας.",
       additionalImage: "/uploads/219d3af8-1e4f-4915-a037-991210ae72e7.png"
     }
   ];
@@ -74,11 +74,11 @@ const TeamSection = ({ hideLeadershipControls = false, showOnlyThermi = false, s
     }
   ];
 
-  // Thermi location specific team members - removed Αλέξανδρος Γκαντίνι and Κυριάκος Γκαντίνι
+  // Thermi location specific team members
   const thermiTeamMembers = [
     {
-      image: "/uploads/e5091cca-2d71-44ad-8f57-ad68b77c54d0.png",
-      name: "Δημήτρης Σταύρου",
+      image: "/uploads/manos-ntoka.jpg",
+      name: "Μάνος Ντοκα",
       role: "ΚΟΜΜΩΤΗΣ"
     }
   ];
@@ -108,14 +108,14 @@ const TeamSection = ({ hideLeadershipControls = false, showOnlyThermi = false, s
   return (
     <section id="team" className="py-20 bg-gradient-to-b from-secondary to-black">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-3 text-white">Meet Our Team</h2>
+        <h2 className="text-4xl font-bold text-center mb-3 text-white">Η Ομάδα μας</h2>
         <p className="text-xl text-center mb-12 text-gray-300 max-w-2xl mx-auto">
-          Expert barbers passionate about crafting the perfect look for every client
+          Έμπειροι barbers με τεχνική, συνέπεια και προσοχή στη λεπτομέρεια.
         </p>
         
         {/* CEO Carousel - show on all pages including Thermi page */}
         <div className="max-w-6xl mx-auto mb-16">
-            <h3 className="text-2xl font-bold text-center mb-8 text-white">Our Leadership</h3>
+            <h3 className="text-2xl font-bold text-center mb-8 text-white">Η Διοίκηση</h3>
             <div className="overflow-hidden" ref={leadershipRef}>
               <div className="flex">
                 {ceoMembers.map((member, index) => (
@@ -128,6 +128,8 @@ const TeamSection = ({ hideLeadershipControls = false, showOnlyThermi = false, s
                               <img
                                 src={member.image}
                                 alt={member.name}
+                                loading="lazy"
+                                decoding="async"
                                 className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-105"
                               />
                             </div>
@@ -149,6 +151,8 @@ const TeamSection = ({ hideLeadershipControls = false, showOnlyThermi = false, s
                                 <img 
                                   src={member.additionalImage} 
                                   alt={`${member.name} additional`} 
+                                  loading="lazy"
+                                  decoding="async"
                                   className="max-w-full h-auto rounded-lg border-2 border-primary/30"
                                 />
                               </div>
@@ -166,7 +170,7 @@ const TeamSection = ({ hideLeadershipControls = false, showOnlyThermi = false, s
         {/* Team Members Carousel - Bigger slides for Thermi page */}
         <div className="max-w-6xl mx-auto">
           <h3 className="text-2xl font-bold text-center mb-8 text-white">
-            {showOnlyThermi ? "Our Thermi Barbers" : showOnlyKalamaria ? "Our Kalamaria Barbers" : "Our Barbers"}
+            {showOnlyThermi ? "Οι Barbers της Θέρμης" : showOnlyKalamaria ? "Οι Barbers της Καλαμαριάς" : "Οι Barbers μας"}
           </h3>
           <div className="overflow-hidden" ref={barberRef}>
             <div className="flex">
@@ -181,6 +185,8 @@ const TeamSection = ({ hideLeadershipControls = false, showOnlyThermi = false, s
                         <img
                           src={member.image}
                           alt={member.name}
+                          loading="lazy"
+                          decoding="async"
                           className={`w-full object-cover transition-transform duration-500 group-hover:scale-105 ${(showOnlyThermi || showOnlyKalamaria) ? 'h-[450px]' : 'h-80'}`}
                         />
                       </div>

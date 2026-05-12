@@ -9,7 +9,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { useToast } from "@/hooks/use-toast";
 import { Badge } from "@/components/ui/badge";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { MapPin, Phone } from "lucide-react";
 import emailjs from '@emailjs/browser';
 
 const formSchema = z.object({
@@ -114,15 +114,6 @@ const ContactForm = () => {
                   </div>
                 </div>
                 
-                <div className="flex items-start">
-                  <div className="bg-primary/10 p-3 rounded-full mr-4">
-                    <Mail className="text-primary" size={24} />
-                  </div>
-                  <div>
-                    <h3 className="font-bold mb-1">Email</h3>
-                    <p className="text-gray-300"></p>
-                  </div>
-                </div>
               </div>
             </div>
             

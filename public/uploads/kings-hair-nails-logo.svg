@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">King's Hair and Nails Salon logo</title>
+  <desc id="desc">White King's Hair and Nails Salon mark on a black background.</desc>
+  <rect width="1200" height="900" fill="#03020a"/>
+  <g fill="none" stroke="#f8f8fb" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M84 139h220" stroke-width="33"/>
+    <path d="M84 139l101 168" stroke-width="35"/>
+    <path d="M116 167h188" stroke-width="10"/>
+    <path d="M139 189l69 118" stroke-width="10"/>
+    <path d="M896 139h220" stroke-width="33"/>
+    <path d="M1116 139l-101 168" stroke-width="35"/>
+    <path d="M896 167h188" stroke-width="10"/>
+    <path d="M1061 189l-69 118" stroke-width="10"/>
+    <path d="M282 281h132" stroke-width="11"/>
+    <path d="M786 281h132" stroke-width="11"/>
+    <circle cx="430" cy="281" r="10" fill="#f8f8fb" stroke="none"/>
+    <circle cx="770" cy="281" r="10" fill="#f8f8fb" stroke="none"/>
+    <path d="M360 555l246 338 246-338" stroke-width="34"/>
+    <path d="M396 555l210 286 210-286" stroke-width="10"/>
+  </g>
+  <g fill="#f8f8fb">
+    <text x="600" y="165" font-family="Georgia, 'Times New Roman', serif" font-size="58" text-anchor="middle" letter-spacing="2">HAIR &amp; NAILS</text>
+    <text x="600" y="515" font-family="Georgia, 'Times New Roman', serif" font-size="172" text-anchor="middle" letter-spacing="34">KING&apos;S</text>
+  </g>
+  <g fill="none" stroke="#f8f8fb" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M540 238l18-28 21 31 23-45 24 45 22-31 18 28" stroke-width="8"/>
+    <path d="M512 238c8-37 44-57 88-57s80 20 88 57c4 19-7 38-25 45l-34 13c-19 7-40 7-58 0l-34-13c-18-7-29-26-25-45z" stroke-width="9"/>
+    <path d="M549 253c18 18 32 30 51 30s33-12 51-30" stroke-width="6"/>
+    <path d="M552 242c11-8 23-8 34 0" stroke-width="6"/>
+    <path d="M614 242c11-8 23-8 34 0" stroke-width="6"/>
+    <circle cx="570" cy="247" r="5" fill="#f8f8fb" stroke="none"/>
+    <circle cx="630" cy="247" r="5" fill="#f8f8fb" stroke="none"/>
+    <path d="M592 264l8 9 8-9" stroke-width="5"/>
+    <circle cx="568" cy="641" r="20" stroke-width="9"/>
+    <circle cx="632" cy="641" r="20" stroke-width="9"/>
+    <path d="M585 662l-48 135" stroke-width="10"/>
+    <path d="M615 662l48 135" stroke-width="10"/>
+    <path d="M586 662l88-176" stroke-width="10"/>
+    <path d="M614 662l-88-176" stroke-width="10"/>
+  </g>
+</svg>

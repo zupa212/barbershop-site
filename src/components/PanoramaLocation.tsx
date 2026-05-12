@@ -25,7 +25,7 @@ const PanoramaLocation = () => {
             <div className="space-y-4">
               <p className="text-lg">Βενιζέλου 12, Πανόραμα</p>
               <p className="text-lg">Θεσσαλονίκη, 55236</p>
-              <p className="text-lg">Τηλέφωνο: <a href="tel:+302310340470" className="text-primary hover:underline">2310 340 470</a></p>
+              <p className="text-lg">Τηλέφωνο: <a href="tel:+302310340470" className="text-primary hover:underline">2310340470</a></p>
               
               <div className="flex flex-col sm:flex-row gap-4 mt-6">
                 <Button

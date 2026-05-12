@@ -3,10 +3,15 @@ import { useParams } from 'react-router-dom';
 import { blogPosts } from '@/data/blogPosts';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Home } from "lucide-react";
+import SEO from "@/components/SEO";
+import {
+  buildArticleSchema,
+  buildBreadcrumbSchema,
+  buildOrganizationSchema,
+} from "@/lib/seo";
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -14,14 +19,33 @@ const BlogPost = () => {
 
   if (!post) return <div>Post not found</div>;
 
+  const seoPage = {
+    title: `${post.title} | King's Barbershop Blog`,
+    description: post.excerpt,
+    path: `/blog/${post.id}`,
+    keywords: [
+      post.category,
+      ...(post.tags || []),
+      "King's Barbershop",
+      "barbershop Θεσσαλονίκη",
+    ],
+    image: post.image,
+  };
+
   return (
     <main className="min-h-screen bg-black text-white">
-      <Helmet>
-        <title>{post.title}</title>
-        <meta name="description" content={post.excerpt} />
-        {post.image && <meta property="og:image" content={post.image} />}
-        <link rel="canonical" href="" />
-      </Helmet>
+      <SEO
+        page={seoPage}
+        schema={[
+          buildOrganizationSchema(),
+          buildArticleSchema(post),
+          buildBreadcrumbSchema([
+            { name: "Αρχική", path: "/" },
+            { name: "Blog", path: "/blog" },
+            { name: post.title, path: `/blog/${post.id}` },
+          ]),
+        ]}
+      />
 
       <Navbar />
 
@@ -54,6 +78,8 @@ const BlogPost = () => {
             <img 
               src={post.image} 
               alt={post.title} 
+              loading="eager"
+              decoding="async"
               className="w-full h-full object-cover"
             />
           </div>
@@ -87,6 +113,8 @@ const BlogPost = () => {
                     <img 
                       src={relatedPost.image} 
                       alt={relatedPost.title} 
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-48 object-cover mb-4"
                     />
                   )}

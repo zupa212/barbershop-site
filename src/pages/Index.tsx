@@ -9,31 +9,19 @@ import Testimonials from "@/components/Testimonials";
 import Parallax from "@/components/Parallax";
 import TeamSection from "@/components/TeamSection";
 import ContactForm from "@/components/ContactForm";
-import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
+import SEO from "@/components/SEO";
+import { buildHomeSchema, seoPages } from "@/lib/seo";
 const Index = () => {
   return <main className="min-h-screen bg-black text-white">
-      <Helmet>
-        <title></title>
-        <meta name="description" content="" />
-        <meta name="keywords" content="" />
-        <meta property="og:title" content="" />
-        <meta property="og:description" content="" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="" />
-        <meta property="og:image" content="" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <link rel="canonical" href="" />
-        <meta name="geo.region" content="" />
-        <meta name="geo.placename" content="" />
-      </Helmet>
+      <SEO page={seoPages.home} schema={buildHomeSchema()} />
       <Navbar />
       <Hero />
       <div className="py-4 px-6 bg-gradient-to-r from-black to-gray-900 text-center">
-        <h1 className="text-3xl md:text-4xl font-bold mb-4 text-primary">King's Barbershop Θεσσαλονίκη  </h1>
+        <h1 className="text-3xl md:text-4xl font-bold mb-4 text-primary">King's Barbershop Θεσσαλονίκη</h1>
         <p className="text-lg md:text-xl max-w-4xl mx-auto">
-          Το <strong>King's Barber</strong> (Kingsbarbershop) είναι το <strong>κορυφαίο barbershop</strong> στη <strong>Θεσσαλονίκη</strong> που προσφέρει premium <strong>υπηρεσίες κουρέματος</strong> και <strong>περιποίησης</strong> για άνδρες. Επισκεφθείτε τα καταστήματά μας σε <Link to="/kings-barbershop-panorama" className="text-primary underline hover:text-primary/80 font-semibold">Πανόραμα</Link>, <Link to="/kings-barbershop-thermi" className="text-primary underline hover:text-primary/80 font-semibold">Θέρμη</Link> και <Link to="/kings-barbershop-kalamaria" className="text-primary underline hover:text-primary/80 font-semibold">Καλαμαριά</Link> για την καλύτερη εμπειρία <strong>κουρεματος Θεσσαλονικη</strong>.
+          Το <strong>King's Barber</strong> (Kingsbarbershop) είναι το <strong>κορυφαίο barbershop</strong> στη <strong>Θεσσαλονίκη</strong> που προσφέρει premium <strong>υπηρεσίες κουρέματος</strong> και <strong>περιποίησης</strong> για άνδρες. Επισκεφθείτε τα καταστήματά μας σε <Link to="/kings-barbershop-panorama" className="text-primary underline hover:text-primary/80 font-semibold">Πανόραμα</Link>, <Link to="/kings-barbershop-thermi" className="text-primary underline hover:text-primary/80 font-semibold">Θέρμη</Link> και <Link to="/kings-barbershop-kalamaria" className="text-primary underline hover:text-primary/80 font-semibold">Καλαμαριά</Link>, καθώς και το <Link to="/kings-hair-and-nails-panorama" className="text-primary underline hover:text-primary/80 font-semibold">King&apos;s Hair and Nails Salon</Link> για γυναικεία περιποίηση, μαλλιά και νύχια στο Πανόραμα.
         </p>
       </div>
       <Gallery />
@@ -41,7 +29,7 @@ const Index = () => {
       <section id="locations" className="py-12 px-4 bg-black">
         <div className="container mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">Τα Καταστήματά μας - Kingsbarbershop</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="bg-gradient-to-r from-black to-gray-900 p-6 rounded-lg shadow-lg">
               <h3 className="text-2xl font-bold mb-3">King's Barber Πανόραμα</h3>
               <p className="mb-4">Το πρώτο μας κατάστημα με την καλύτερη ομάδα barbers στη Θεσσαλονίκη για ποιοτικό κουρεμα Θεσσαλονικη.</p>
@@ -60,6 +48,13 @@ const Index = () => {
               <h3 className="text-2xl font-bold mb-3">King's Barber Καλαμαριά</h3>
               <p className="mb-4">Το νεότερο μας κατάστημα με σύγχρονες υπηρεσίες στην καρδιά της Καλαμαριάς.</p>
               <Link to="/kings-barbershop-kalamaria" className="text-primary underline hover:text-primary/80 font-semibold flex items-center gap-2">
+                Μάθετε περισσότερα <ChevronRight size={16} />
+              </Link>
+            </div>
+            <div className="bg-gradient-to-r from-[#080808] to-[#17130d] p-6 rounded-lg shadow-lg border border-primary/20">
+              <h3 className="text-2xl font-bold mb-3">King&apos;s Hair & Nails</h3>
+              <p className="mb-4">Γυναικεία περιποίηση στο Πανόραμα για μαλλιά, νύχια, manicure, pedicure και styling.</p>
+              <Link to="/kings-hair-and-nails-panorama" className="text-primary underline hover:text-primary/80 font-semibold flex items-center gap-2">
                 Μάθετε περισσότερα <ChevronRight size={16} />
               </Link>
             </div>

@@ -10,26 +10,13 @@ import Parallax from "@/components/Parallax";
 import TeamSection from "@/components/TeamSection";
 import ContactForm from "@/components/ContactForm";
 import KalamariaLocation from "@/components/KalamariaLocation";
-import { Helmet } from "react-helmet";
+import SEO from "@/components/SEO";
+import { buildLocationPageSchema, seoPages } from "@/lib/seo";
 
 const KalamariaShop = () => {
   return (
     <main className="min-h-screen bg-black text-white">
-      <Helmet>
-        <title></title>
-        <meta name="description" content="" />
-        <meta name="keywords" content="" />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="" />
-        <meta property="og:title" content="" />
-        <meta property="og:description" content="" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="geo.region" content="" />
-        <meta name="geo.placename" content="" />
-        <meta name="geo.position" content="" />
-      </Helmet>
+      <SEO page={seoPages.kalamaria} schema={buildLocationPageSchema("kalamaria")} />
       <Navbar />
       <Hero />
       <KalamariaLocation />
@@ -40,7 +27,7 @@ const KalamariaShop = () => {
       <Testimonials />
       <ContactForm />
       <Services />
-      <InstagramFeed />
+      <InstagramFeed compact />
       <Footer />
     </main>
   );

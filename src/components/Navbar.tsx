@@ -13,7 +13,7 @@ const Navbar = () => {
   const location = useLocation();
   const { t } = useLanguage();
   
-  const bookingUrl = "https://www.fresha.com/el/providers/kings-barbershop-dtf1yzvb?pId=949345&fbclid=PAZXh0bgNhZW0CMTEAAaaTe5QSX5flseZhS4xehW4RCWHNip_W41a83m1jq6dh1N3HhPSv4HpI6jI_aem_Q6b7fBsJkTRgjf-rE5Y_1g&locale=el&allOffer=true";
+  const bookingUrl = "https://www.fresha.com/el/providers/kings-barbershop-dtf1yzvb?pId=949345&locale=el&allOffer=true";
 
   // Update the scroll state
   useEffect(() => {
@@ -55,6 +55,9 @@ const Navbar = () => {
               <img 
                 src="/uploads/8ab1f84b-2d00-49d8-b59d-7340c4b75f78.png" 
                 alt="King's Barber Logo" 
+                width="96"
+                height="96"
+                decoding="async"
                 className="h-24 mr-2" 
               />
             </Link>
@@ -85,6 +88,12 @@ const Navbar = () => {
               className={`${isActive('/kings-barbershop-kalamaria') ? 'text-primary font-bold' : 'text-white'} hover:text-primary transition`}
             >
               {t('nav.kalamaria')}
+            </Link>
+            <Link 
+              to="/kings-hair-and-nails-panorama" 
+              className={`${isActive('/kings-hair-and-nails-panorama') ? 'text-primary font-bold' : 'text-white'} hover:text-primary transition`}
+            >
+              {t('nav.hairNails')}
             </Link>
             <Link 
               to="/franchise" 
@@ -153,6 +162,13 @@ const Navbar = () => {
               onClick={() => setIsOpen(false)}
             >
               {t('nav.kalamaria')}
+            </Link>
+            <Link 
+              to="/kings-hair-and-nails-panorama" 
+              className={`${isActive('/kings-hair-and-nails-panorama') ? 'text-primary font-bold' : 'text-white'} hover:text-primary transition`}
+              onClick={() => setIsOpen(false)}
+            >
+              {t('nav.hairNails')}
             </Link>
             <Link 
               to="/franchise" 

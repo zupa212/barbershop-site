@@ -18,6 +18,8 @@ const BlogPostList = () => {
               <img 
                 src={post.image} 
                 alt={post.title} 
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover hover:scale-105 transition-transform"
               />
             </div>

@@ -1,5 +1,4 @@
 
-import React, { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/franchise/HeroSection";
@@ -11,15 +10,22 @@ import BenefitsTabs from "@/components/franchise/BenefitsTabs";
 import Testimonials from "@/components/franchise/Testimonials";
 import ContactForm from "@/components/franchise/ContactForm";
 import OwnershipJourney from "@/components/franchise/OwnershipJourney";
+import SEO from "@/components/SEO";
+import { buildBreadcrumbSchema, buildOrganizationSchema, seoPages } from "@/lib/seo";
 
 const Franchise = () => {
-  // Update document title using useEffect, which is safer for client-side updates
-  useEffect(() => {
-    document.title = "Ευκαιρίες Franchise - King's Barber";
-  }, []);
-  
   return (
     <main className="min-h-screen bg-black text-white">
+      <SEO
+        page={seoPages.franchise}
+        schema={[
+          buildOrganizationSchema(),
+          buildBreadcrumbSchema([
+            { name: "Αρχική", path: "/" },
+            { name: "Franchise", path: "/franchise" },
+          ]),
+        ]}
+      />
       <Navbar />
       <HeroSection />
       <VideoSection />

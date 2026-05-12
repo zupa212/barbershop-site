@@ -8,6 +8,15 @@ export default defineConfig({
     host: "::",
     port: 8080,
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          return id.includes("node_modules") ? "vendor" : undefined;
+        },
+      },
+    },
+  },
   plugins: [react()],
   resolve: {
     alias: {

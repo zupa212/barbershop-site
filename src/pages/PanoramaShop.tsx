@@ -11,16 +11,13 @@ import Parallax from "@/components/Parallax";
 import TeamSection from "@/components/TeamSection";
 import ContactForm from "@/components/ContactForm";
 import PanoramaLocation from "@/components/PanoramaLocation";
-import { Helmet } from "react-helmet";
+import SEO from "@/components/SEO";
+import { buildLocationPageSchema, seoPages } from "@/lib/seo";
 
 const PanoramaShop = () => {
   return (
     <main className="min-h-screen bg-black text-white">
-      <Helmet>
-        <title></title>
-        <meta name="description" content="" />
-        <meta name="keywords" content="" />
-      </Helmet>
+      <SEO page={seoPages.panorama} schema={buildLocationPageSchema("panorama")} />
       <Navbar />
       <Hero />
       <PanoramaLocation />
@@ -31,7 +28,7 @@ const PanoramaShop = () => {
       <Testimonials />
       <ContactForm />
       <Services />
-      <InstagramFeed />
+      <InstagramFeed compact />
       <Footer />
     </main>
   );

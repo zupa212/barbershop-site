@@ -5,23 +5,24 @@ import Footer from "@/components/Footer";
 import BlogHeader from "@/components/blog/BlogHeader";
 import BlogPostList from "@/components/blog/BlogPostList";
 import BlogCategories from "@/components/blog/BlogCategories";
-import { Helmet } from "react-helmet";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Home } from "lucide-react";
+import SEO from "@/components/SEO";
+import { buildBreadcrumbSchema, buildOrganizationSchema, seoPages } from "@/lib/seo";
 
 const Blog = () => {
   return (
     <main className="min-h-screen bg-black text-white">
-      <Helmet>
-        <title></title>
-        <meta name="description" content="" />
-        <meta name="keywords" content="" />
-        <link rel="canonical" href="" />
-        <meta property="og:title" content="" />
-        <meta property="og:description" content="" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="" />
-      </Helmet>
+      <SEO
+        page={seoPages.blog}
+        schema={[
+          buildOrganizationSchema(),
+          buildBreadcrumbSchema([
+            { name: "Αρχική", path: "/" },
+            { name: "Blog", path: "/blog" },
+          ]),
+        ]}
+      />
 
       <Navbar />
 

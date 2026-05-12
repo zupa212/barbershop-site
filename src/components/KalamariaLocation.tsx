@@ -41,8 +41,8 @@ const KalamariaLocation = () => {
                 <div>
                   <p className="font-semibold">Ωράριο Λειτουργίας</p>
                   <div className="text-gray-300 space-y-1">
-                    <p>Δευτέρα - Σάββατο: 9:00 - 21:00</p>
-                    <p>Κυριακή: Κλειστά</p>
+                    <p>Τρίτη - Σάββατο: 9:00 - 17:00</p>
+                    <p>Κυριακή - Δευτέρα: Κλειστά</p>
                   </div>
                 </div>
               </div>

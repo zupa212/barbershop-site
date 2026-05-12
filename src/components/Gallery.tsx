@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import type { CarouselApi } from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
 
 type MediaItem = {
@@ -14,8 +15,8 @@ const Gallery = ({
   showOnlyThermi = false,
   showOnlyKalamaria = false
 }) => {
-  const [api, setApi] = useState<any>();
-  const [secondApi, setSecondApi] = useState<any>();
+  const [api, setApi] = useState<CarouselApi>();
+  const [secondApi, setSecondApi] = useState<CarouselApi>();
   const location = useLocation();
   const isPanoramaPage = location.pathname === "/kings-barbershop-panorama" || showOnlyPanorama;
   const isThermiPage = location.pathname === "/kings-barbershop-thermi" || showOnlyThermi;
@@ -140,6 +141,15 @@ const Gallery = ({
   }
 
   const renderMedia = (item: MediaItem, index: number) => {
+    const locationName = isPanoramaPage
+      ? "King's Barbershop Πανόραμα"
+      : isThermiPage
+        ? "King's Barbershop Θέρμη"
+        : isKalamariaPage
+          ? "King's Barbershop Καλαμαριά"
+          : "King's Barbershop Θεσσαλονίκη";
+    const imageAlt = `${locationName} gallery ${index + 1}`;
+
     switch (item.type) {
       case "video":
         return (
@@ -151,31 +161,32 @@ const Gallery = ({
             muted 
             loop 
             playsInline 
+            preload="metadata"
             controls={false}
           />
         );
       case "gif":
-        return <img src={item.src} alt={`Gallery item ${index + 1}`} className="absolute inset-0 object-cover w-full h-full transition-transform duration-300 hover:scale-110" />;
+        return <img src={item.src} alt={imageAlt} loading="lazy" decoding="async" className="absolute inset-0 object-cover w-full h-full transition-transform duration-300 hover:scale-110" />;
       case "webp":
       case "image":
       default:
-        return <img src={item.src} alt={`Gallery item ${index + 1}`} className="absolute inset-0 object-cover w-full h-full transition-transform duration-300 hover:scale-110" />;
+        return <img src={item.src} alt={imageAlt} loading="lazy" decoding="async" className="absolute inset-0 object-cover w-full h-full transition-transform duration-300 hover:scale-110" />;
     }
   };
 
   return <section id="gallery" className="py-20 bg-black">
       <div className="container mx-auto px-4">
         {!isPanoramaPage && !isThermiPage && !isKalamariaPage && <>
-            <h2 className="text-4xl font-bold text-center text-white mb-12">Our Locations</h2>
+            <h2 className="text-4xl font-bold text-center text-white mb-12">Τα Καταστήματά μας</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto mb-16">
               {locations.map((location, index) => <div key={index} className="relative overflow-hidden rounded-lg border-2 border-gray-800 aspect-[4/3]">
-                  <img src={location.image} alt={location.name} className="w-full h-full object-cover brightness-75" />
+                  <img src={location.image} alt={location.name} loading="lazy" decoding="async" className="w-full h-full object-cover brightness-75" />
                   <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 to-transparent">
                     <h3 className="text-xl md:text-2xl font-bold text-white mb-2">{location.name}</h3>
                     <p className="text-gray-300 mb-4">{location.description}</p>
                     <Button className="bg-primary hover:bg-primary/90 text-white" onClick={() => window.open(location.bookingUrl, "_blank")}>
-                      Book Now
+                      Κλείστε Ραντεβού
                     </Button>
                   </div>
                 </div>)}
@@ -183,11 +194,11 @@ const Gallery = ({
           </>}
 
         {(isThermiPage || isKalamariaPage) && <>
-            <h2 className="text-4xl font-bold text-center text-white mb-12">Our Location</h2>
+            <h2 className="text-4xl font-bold text-center text-white mb-12">Η Τοποθεσία μας</h2>
             
             <div className="max-w-3xl mx-auto mb-16">
               {locations.map((location, index) => <div key={index} className="relative overflow-hidden rounded-lg border-2 border-gray-800 aspect-[4/3]">
-                  <img src={location.image} alt={location.name} className="w-full h-full object-cover brightness-75" />
+                  <img src={location.image} alt={location.name} loading="lazy" decoding="async" className="w-full h-full object-cover brightness-75" />
                   <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 to-transparent">
                     <h3 className="text-xl md:text-2xl font-bold text-white mb-2">{location.name}</h3>
                     <p className="text-gray-300 mb-4">
@@ -197,14 +208,14 @@ const Gallery = ({
                       }
                     </p>
                     <Button className="bg-primary hover:bg-primary/90 text-white" onClick={() => window.open(location.bookingUrl, "_blank")}>
-                      Book Now
+                      Κλείστε Ραντεβού
                     </Button>
                   </div>
                 </div>)}
             </div>
           </>}
 
-        <h2 className="text-4xl font-bold text-center text-white mb-12">Our Gallery</h2>
+        <h2 className="text-4xl font-bold text-center text-white mb-12">Gallery King's Barbershop</h2>
         <div className="max-w-7xl mx-auto">
           <Carousel setApi={setApi} className="w-full" opts={{
           loop: true,
@@ -217,7 +228,7 @@ const Gallery = ({
                     <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
                       <div className="flex items-center">
                         <div className="w-8 h-8 rounded-full bg-gray-300 overflow-hidden">
-                          <img src="/uploads/f1fb9576-0c3f-4157-b943-5ffdd370766a.png" alt="Profile" className="w-full h-full object-cover" />
+                          <img src="/uploads/f1fb9576-0c3f-4157-b943-5ffdd370766a.png" alt="King's Barbershop profile" loading="lazy" decoding="async" className="w-full h-full object-cover" />
                         </div>
                         <span className="ml-2 text-white text-sm font-medium">King's Barbershop</span>
                       </div>

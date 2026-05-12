@@ -5,6 +5,7 @@ export const translations = {
       panorama: "Πανόραμα",
       thermi: "Θέρμη",
       kalamaria: "Καλαμαριά",
+      hairNails: "Hair & Nails",
       franchise: "Franchise",
       bookNow: "Κλείστε Ραντεβού"
     },
@@ -74,6 +75,7 @@ export const translations = {
       panorama: "Πανόραμα",
       thermi: "Θέρμη",
       kalamaria: "Καλαμαριά",
+      hairNails: "Hair & Nails",
       franchise: "Franchise",
       rights: "Με επιφύλαξη παντός δικαιώματος."
     },
@@ -110,21 +112,21 @@ export const translations = {
     panoramaLocation: {
       title: "King's Barbershop Πανόραμα",
       address: "Βενιζέλου 12, Πανόραμα, Θεσσαλονίκη 55236",
-      phone: "Τηλέφωνο: 2310 123 456",
+      phone: "Τηλέφωνο: 2310340470",
       directions: "Οδηγίες",
       bookAppointment: "Κλείστε Ραντεβού"
     },
     thermiLocation: {
       title: "King's Barbershop Θέρμη",
-      address: "Καρόλου & Δημητρίου 4, Θέρμη, Θεσσαλονίκη 57001",
-      phone: "Τηλέφωνο: 2310 987 654",
+      address: "Καραολή και Δημητρίου 4, Εμπορικό LA PIAZZA, Θέρμη, Θεσσαλονίκη 57001",
+      phone: "Τηλέφωνο: 2310464749",
       directions: "Οδηγίες",
       bookAppointment: "Κλείστε Ραντεβού"
     },
     kalamariaLocation: {
       title: "King's Barbershop Καλαμαριά",
-      address: "Κοτυώρων 37, Καλαμαριά, Θεσσαλονίκη 55133",
-      phone: "Τηλέφωνο: 2310 456 789",
+      address: "Κοτυώρων 37, Καλαμαριά, Θεσσαλονίκη 55131",
+      phone: "Τηλέφωνο: 231 040 4067",
       directions: "Οδηγίες",
       bookAppointment: "Κλείστε Ραντεβού"
     },
@@ -175,6 +177,7 @@ export const translations = {
       panorama: "Panorama",
       thermi: "Thermi",
       kalamaria: "Kalamaria",
+      hairNails: "Hair & Nails",
       franchise: "Franchise",
       bookNow: "Book Now"
     },
@@ -244,6 +247,7 @@ export const translations = {
       panorama: "Panorama",
       thermi: "Thermi",
       kalamaria: "Kalamaria",
+      hairNails: "Hair & Nails",
       franchise: "Franchise",
       rights: "All rights reserved."
     },
@@ -280,21 +284,21 @@ export const translations = {
     panoramaLocation: {
       title: "King's Barbershop Panorama",
       address: "Venizelou 12, Panorama, Thessaloniki 55236",
-      phone: "Phone: 2310 123 456",
+      phone: "Phone: 2310340470",
       directions: "Get Directions",
       bookAppointment: "Book Appointment"
     },
     thermiLocation: {
       title: "King's Barbershop Thermi",
-      address: "Karolou & Dimitriou 4, Thermi, Thessaloniki 57001",
-      phone: "Phone: 2310 987 654",
+      address: "Karaoli & Dimitriou 4, LA PIAZZA Shopping Center, Thermi, Thessaloniki 57001",
+      phone: "Phone: 2310464749",
       directions: "Get Directions",
       bookAppointment: "Book Appointment"
     },
     kalamariaLocation: {
       title: "King's Barbershop Kalamaria",
-      address: "Kotyoron 37, Kalamaria, Thessaloniki 55133",
-      phone: "Phone: 2310 456 789",
+      address: "Kotyoron 37, Kalamaria, Thessaloniki 55131",
+      phone: "Phone: 231 040 4067",
       directions: "Get Directions",
       bookAppointment: "Book Appointment"
     },

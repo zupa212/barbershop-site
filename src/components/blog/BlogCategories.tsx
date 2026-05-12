@@ -3,27 +3,21 @@ import React from "react";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { TagIcon, BookText, BookOpen } from "lucide-react";
+import { blogPosts } from "@/data/blogPosts";
 
 const BlogCategories = () => {
-  const categories = [
-    { name: "Περιποίηση Γενειάδας", count: 8, slug: "beard-care" },
-    { name: "Τάσεις Μαλλιών", count: 12, slug: "hair-trends" },
-    { name: "Προϊόντα Μαλλιών", count: 6, slug: "hair-products" },
-    { name: "Συμβουλές Styling", count: 9, slug: "styling-tips" },
-    { name: "Νέα Καταστημάτων", count: 5, slug: "shop-news" },
-    { name: "Επαγγελματική Εμφάνιση", count: 4, slug: "professional-look" },
-  ];
+  const categories = Object.entries(
+    blogPosts.reduce<Record<string, number>>((acc, post) => {
+      acc[post.category] = (acc[post.category] || 0) + 1;
+      return acc;
+    }, {})
+  ).map(([name, count]) => ({ name, count }));
 
-  const recentPosts = [
-    { title: "Πώς να επιλέξετε το ιδανικό κούρεμα για το σχήμα του προσώπου σας", slug: "ideal-haircut-face-shape" },
-    { title: "Τα καλύτερα προϊόντα για λεπτά μαλλιά", slug: "best-products-thin-hair" },
-    { title: "Φθινοπωρινές τάσεις στα ανδρικά κουρέματα", slug: "fall-mens-haircut-trends" },
-  ];
+  const recentPosts = [...blogPosts]
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .slice(0, 3);
 
-  const tags = [
-    "κουρέματα", "γενειάδα", "fade", "περιποίηση", "undercut", 
-    "styling", "προϊόντα", "barber", "τάσεις", "φροντίδα μαλλιών"
-  ];
+  const tags = Array.from(new Set(blogPosts.flatMap((post) => post.tags || [])));
 
   return (
     <div className="space-y-8">
@@ -36,8 +30,8 @@ const BlogCategories = () => {
         <div className="space-y-2">
           {categories.map((category) => (
             <Link 
-              key={category.slug} 
-              to={`/blog/category/${category.slug}`}
+              key={category.name} 
+              to="/blog"
               className="flex items-center justify-between py-2 border-b border-gray-800 hover:text-primary"
             >
               <span>{category.name}</span>
@@ -56,8 +50,8 @@ const BlogCategories = () => {
         <div className="space-y-4">
           {recentPosts.map((post) => (
             <Link 
-              key={post.slug} 
-              to={`/blog/${post.slug}`}
+              key={post.id} 
+              to={`/blog/${post.id}`}
               className="block hover:text-primary"
             >
               <p>{post.title}</p>
@@ -76,7 +70,7 @@ const BlogCategories = () => {
           {tags.map((tag) => (
             <Link 
               key={tag} 
-              to={`/blog/tag/${tag}`}
+              to="/blog"
               className="bg-gray-800 px-3 py-1 rounded-full text-sm hover:bg-primary hover:text-black transition-colors"
             >
               {tag}

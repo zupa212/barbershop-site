@@ -1,119 +1,40 @@
-
-import { useState } from "react";
-import { z } from "zod";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { useToast } from "@/hooks/use-toast";
-import { Mail, Phone, MapPin, Clock } from "lucide-react";
-import emailjs from '@emailjs/browser';
+import { Phone, Clock } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-const formSchema = z.object({
-  name: z.string().min(2, {
-    message: "Name must be at least 2 characters.",
-  }),
-  email: z.string().email({
-    message: "Please enter a valid email address.",
-  }),
-  phone: z.string().min(10, {
-    message: "Please enter a valid phone number.",
-  }),
-  subject: z.string().min(2, {
-    message: "Subject must be at least 2 characters.",
-  }),
-  message: z.string().min(10, {
-    message: "Message must be at least 10 characters.",
-  }),
-});
-
 const ContactForm = () => {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
   const { t } = useLanguage();
   
   const contactInfo = [
     {
       icon: <Phone size={24} />,
       title: "Panorama",
-      info: "2310 340 470",
+      info: "2310340470",
       description: "Βενιζέλου 12, Πανόραμα"
     },
     {
       icon: <Phone size={24} />,
       title: "Thermi",
-      info: "2310 464 749",
-      description: "Καραολή και Δημητρίου 4, Θέρμη"
+      info: "2310464749",
+      description: "Καραολή και Δημητρίου 4, Εμπορικό LA PIAZZA, Θέρμη"
+    },
+    {
+      icon: <Phone size={24} />,
+      title: "Kalamaria",
+      info: "231 040 4067",
+      description: "Κοτυώρων 37, Καλαμαριά"
     },
     {
       icon: <Clock size={24} />,
       title: "Ωράριο Λειτουργίας",
-      info: "Τρίτη - Παρασκευή: 10:00 π.μ. – 9:00 μ.μ.",
-      description: "Σάββατο: 10:00 π.μ. – 5:00 μ.μ.\nΚυριακή - Δευτέρα: Κλειστά"
-    },
-    {
-      icon: <Mail size={24} />,
-      title: "Email",
-      info: "",
-      description: "We reply within 24 hours"
+      info: "Τρίτη - Σάββατο: 9:00 π.μ. – 5:00 μ.μ.",
+      description: "Κυριακή - Δευτέρα: Κλειστά"
     }
   ];
 
   const panoramaBookingUrl = "https://www.fresha.com/el/a/kings-barbershop-panorama-panorama-venizeloy-12-i9fmuc5j/booking?allOffer=true&pId=949345";
   const thermiBookingUrl = "https://www.fresha.com/el/a/kings-barbershop-thermi-thermi-karaoli-kai-dimitrioy-4-fr2zi7of/booking?allOffer=true&pId=949345";
   const kalamariaBookingUrl = "https://www.fresha.com/el/a/kings-barbershop-kalamaria-kalamaria-kotyoron-37-j00634ss/booking?allOffer=true&menu=true&pId=949345";
-
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      phone: "",
-      subject: "",
-      message: "",
-    },
-  });
-
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    setIsSubmitting(true);
-    
-    // EmailJS configuration — set in .env (VITE_EMAILJS_*)
-    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-    
-    // Prepare template parameters
-    const templateParams = {
-      from_name: values.name,
-      from_email: values.email,
-      from_phone: values.phone,
-      subject: values.subject,
-      message: values.message
-    };
-    
-    emailjs.send(serviceId, templateId, templateParams, publicKey)
-      .then(() => {
-        toast({
-          title: "Booking Request Sent",
-          description: "Thank you for your booking request. We'll respond shortly.",
-        });
-        form.reset();
-      })
-      .catch((error) => {
-        console.error('Error sending email:', error);
-        toast({
-          title: "Error",
-          description: "There was a problem sending your message. Please try again.",
-          variant: "destructive"
-        });
-      })
-      .finally(() => {
-        setIsSubmitting(false);
-      });
-  }
 
   return (
     <section id="contact" className="py-20 bg-gradient-to-b from-black to-secondary">
@@ -156,7 +77,7 @@ const ContactForm = () => {
               >
                 <div className="text-primary mb-4">{item.icon}</div>
                 <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                {index === 2 ? (
+                {item.title === "Ωράριο Λειτουργίας" ? (
                   <div className="working-hours">
                     <p className="text-white mb-1">{item.info}</p>
                     {item.description.split('\n').map((line, i) => (

@@ -17,18 +17,18 @@ const ThermiLocation = () => {
             <p className="flex items-center mb-2">
               <MapPin className="mr-2 h-5 w-5 text-gray-400" />
               <span className="text-gray-300">
-                Καραολή και Δημητρίου 4, Θέρμη 570 01
+                Καραολή και Δημητρίου 4, Εμπορικό LA PIAZZA, Θέρμη 570 01
               </span>
             </p>
             <p className="flex items-center mb-2">
               <Phone className="mr-2 h-5 w-5 text-gray-400" />
               <a href="tel:+302310464749" className="text-gray-300 hover:text-primary transition-colors">
-                2310 464 749
+                2310464749
               </a>
             </p>
             <p className="flex items-center mb-4">
               <Clock className="mr-2 h-5 w-5 text-gray-400" />
-              <span className="text-gray-300">Τρίτη -Παρασκευή: 9:00 - 21:00, Σάββατο: 9:00 -  5:00 μ.μ.</span>
+              <span className="text-gray-300">Τρίτη - Σάββατο: 9:00 - 17:00, Κυριακή - Δευτέρα: Κλειστά</span>
             </p>
             <div className="flex gap-4">
               <Button variant="secondary" onClick={handleMapClick}>
